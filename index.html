@@ -3,595 +3,194 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Photoshot - Professional Photography Agency</title>
-
-    <link rel="stylesheet" type="text/css" href="css/vendor.css" />
+    <title>Photoshot | Cinematic Visual Stories</title>
 
     <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Link Bootstrap's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+    <!-- Bootstrap & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Google Fonts ================================================== -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
 
     <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-    <!-- script ================================================== -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
   </head>
 
-  <body data-bs-spy="scroll" data-bs-target="#navbar-example2" tabindex="0">
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-      <symbol id="quote" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M6.5 10c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.318.142-.686.238-1.028.466c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.945c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 6.5 10m11 0c-.223 0-.437.034-.65.065c.069-.232.14-.468.254-.68c.114-.308.292-.575.469-.844c.148-.291.409-.488.601-.737c.201-.242.475-.403.692-.604c.213-.21.492-.315.714-.463c.232-.133.434-.28.65-.35l.539-.222l.474-.197l-.485-1.938l-.597.144c-.191.048-.424.104-.689.171c-.271.05-.56.187-.882.312c-.317.143-.686.238-1.028.467c-.344.218-.741.4-1.091.692c-.339.301-.748.562-1.05.944c-.33.358-.656.734-.909 1.162c-.293.408-.492.856-.702 1.299c-.19.443-.343.896-.468 1.336c-.237.882-.343 1.72-.384 2.437c-.034.718-.014 1.315.028 1.747c.015.204.043.402.063.539l.025.168l.026-.006A4.5 4.5 0 1 0 17.5 10"
-        />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="send" viewBox="0 0 24 24">
-        <g fill="none">
-          <path
-            d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
-          />
-          <path
-            fill="currentColor"
-            d="m21.433 4.861l-6 15.5a1 1 0 0 1-1.624.362l-3.382-3.235l-2.074 2.073a.5.5 0 0 1-.853-.354v-4.519L2.309 9.723a1 1 0 0 1 .442-1.691l17.5-4.5a1 1 0 0 1 1.181 1.329ZM19 6.001L8.032 13.152l1.735 1.66L19 6Z"
-          />
-        </g>
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="quote" viewBox="0 0 16 16">
-        <path
-          fill="currentColor"
-          d="M7 7v7H0V6.9c0-4.8 4.5-5.4 4.5-5.4l.6 1.4s-2 .3-2.4 1.9C2.3 6 3.1 7 3.1 7zm9 0v7H9V6.9c0-4.8 4.5-5.4 4.5-5.4l.6 1.4s-2 .3-2.4 1.9c-.4 1.2.4 2.2.4 2.2z"
-        />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="play" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M9.5 15.584V8.416a.5.5 0 0 1 .77-.42l5.576 3.583a.5.5 0 0 1 0 .842l-5.576 3.584a.5.5 0 0 1-.77-.42Z"
-        />
-        <path
-          fill="currentColor"
-          d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12m11-9.5A9.5 9.5 0 0 0 2.5 12a9.5 9.5 0 0 0 9.5 9.5a9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        id="location"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="currentColor"
-          d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"
-        />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="phone" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="m16.556 12.906l-.455.453s-1.083 1.076-4.038-1.862s-1.872-4.014-1.872-4.014l.286-.286c.707-.702.774-1.83.157-2.654L9.374 2.86C8.61 1.84 7.135 1.705 6.26 2.575l-1.57 1.56c-.433.432-.723.99-.688 1.61c.09 1.587.808 5 4.812 8.982c4.247 4.222 8.232 4.39 9.861 4.238c.516-.048.964-.31 1.325-.67l1.42-1.412c.96-.953.69-2.588-.538-3.255l-1.91-1.039c-.806-.437-1.787-.309-2.417.317"
-        />
-      </symbol>
-      <symbol xmlns="http://www.w3.org/2000/svg" id="email" viewBox="0 0 24 24">
-        <path
-          fill="currentColor"
-          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5l-8-5V6l8 5l8-5v2z"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        id="star"
-        viewBox="0 0 512 512"
-      >
-        <path
-          fill="currentColor"
-          d="M394 480a16 16 0 0 1-9.39-3L256 383.76L127.39 477a16 16 0 0 1-24.55-18.08L153 310.35L23 221.2a16 16 0 0 1 9-29.2h160.38l48.4-148.95a16 16 0 0 1 30.44 0l48.4 149H480a16 16 0 0 1 9.05 29.2L359 310.35l50.13 148.53A16 16 0 0 1 394 480"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        id="facebook"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="currentColor"
-          d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        id="instagram"
-        viewBox="0 0 256 256"
-      >
-        <path
-          fill="currentColor"
-          d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32Zm48-136H80a56.06 56.06 0 0 0-56 56v96a56.06 56.06 0 0 0 56 56h96a56.06 56.06 0 0 0 56-56V80a56.06 56.06 0 0 0-56-56Zm40 152a40 40 0 0 1-40 40H80a40 40 0 0 1-40-40V80a40 40 0 0 1 40-40h96a40 40 0 0 1 40 40ZM192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z"
-        />
-      </symbol>
-    </svg>
+  <body>
+    <!-- Navbar -->
+    <nav id="header" class="navbar navbar-expand-lg fixed-top py-4">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">
+          <h3 class="text-white mb-0">PHOTOSHOT<span class="text-accent">.</span></h3>
+        </a>
 
-    <!-- nav bar start  -->
-    <nav
-      id="header"
-      class="navbar navbar-expand-lg bg-dark fixed-top py-4 px-2 p-md-4"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html"
-          ><h3 class="text-white mb-0">Photoshot</h3></a
-        >
-
-        <button
-          class="navbar-toggler text-white"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar2"
-          aria-controls="offcanvasNavbar2"
-          aria-label="Toggle navigation"
-        >
-          <ion-icon name="menu-outline" style="font-size: 30px"></ion-icon>
+        <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <i class="bi bi-list fs-1"></i>
         </button>
 
-        <div
-          class="offcanvas offcanvas-end"
-          tabindex="-1"
-          id="offcanvasNavbar2"
-          aria-labelledby="offcanvasNavbar2Label"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul
-              class="navbar-nav align-items-center justify-content-end align-items-center flex-grow-1"
-            >
-              <li class="nav-item">
-                <a class="nav-link active me-md-4" href="#billboard">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-md-4" href="#about-us">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-md-4" href="#services">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-md-4" href="#gallery">Gallery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-md-4" href="#help">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link me-md-4" href="admin/index.html">Admin</a>
-              </li>
-            </ul>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link active" href="#billboard">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about-us">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-form">Contact</a></li>
+            <li class="nav-item ms-lg-4"><a class="btn btn-outline-light btn-sm" href="/admin">Admin</a></li>
+          </ul>
         </div>
       </div>
     </nav>
 
-    <!-- billboard start  -->
-    <section
-      id="billboard"
-      style="
-        background: linear-gradient(
-            135deg,
-            rgba(102, 126, 234, 0.8) 0%,
-            rgba(118, 75, 162, 0.8) 100%
-          ),
-          url(images/billboard.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 960px;
-        background-size: cover;
-      "
-    >
-      <div class="container padding-large">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <h1
-              class="text-capitalize text-white lh-1 my-3"
-              style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)"
-            >
-              Capture Your Perfect Moments
-            </h1>
-            <p
-              class="text-white mb-4"
-              style="
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-                font-size: 1.2rem;
-              "
-            >
-              Professional photography services for weddings, events, portraits,
-              and commercial projects. We bring your vision to life with
-              stunning imagery that tells your story.
-            </p>
+    <!-- Hero Section -->
+    <section id="billboard" class="d-flex align-items-center" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('images/billboard.png'); height: 100vh; background-size: cover; background-position: center; background-attachment: fixed;">
+      <div class="container hero-content text-center">
+        <div data-aos="zoom-out" data-aos-duration="2000">
+          <span class="text-accent ls-5 text-uppercase fw-bold d-block mb-3">Est. 2026</span>
+          <h1 class="text-white fw-bold">Capturing <span class="text-accent">Souls</span>, Not Just Faces.</h1>
+          <p class="text-white-50 mx-auto">We specialize in cinematic storytelling through elite photography. Every frame is a legacy preserved in light.</p>
+          <div class="mt-5 d-flex justify-content-center gap-3">
+            <a href="#gallery" class="btn btn-primary">Our Portfolio</a>
+            <a href="#contact-form" class="btn btn-outline-light">Get In Touch</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!--About us start  -->
-    <section id="about-us" class="padding-medium">
+    <!-- Features -->
+    <section id="about-us" class="padding-medium bg-light-dark">
       <div class="container">
-        <div class="row">
-          <div class="text-center col-lg-4">
-            <i class="bi bi-camera text-primary display-2"></i>
-            <h3 class="my-3">Professional Quality</h3>
-            <p>State-of-the-art equipment and expert photographers.</p>
+        <div class="row g-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-card">
+              <i class="bi bi-camera-reels display-4"></i>
+              <h3 class="h4">Cinematic Vision</h3>
+              <p class="small text-muted">We use high-end cinema optics to achieve that unique film-like quality in every shot.</p>
+            </div>
           </div>
-          <div class="text-center col-lg-4">
-            <i class="bi bi-clock text-primary display-2"></i>
-            <h3 class="my-3">Fast Delivery</h3>
-            <p>Quick turnaround times without compromising quality.</p>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-card">
+              <i class="bi bi-lightning-charge display-4"></i>
+              <h3 class="h4">Elite Precision</h3>
+              <p class="small text-muted">A perfect blend of technical mastery and artistic intuition for flawless results.</p>
+            </div>
           </div>
-          <div class="text-center col-lg-4">
-            <i class="bi bi-heart text-primary display-2"></i>
-            <h3 class="my-3">Personalized Service</h3>
-            <p>Tailored photography packages to meet your needs.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services start  -->
-    <section id="services">
-      <div class="container-fluid px-md-5">
-        <h2 class="text-capitalize m-0 py-lg-5">Our Services</h2>
-
-        <div class="row" id="services-container">
-          <!-- Services will be dynamically loaded here -->
-          <div class="col-12 text-center">
-            <p class="text-muted">Loading services...</p>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-card">
+              <i class="bi bi-gem display-4"></i>
+              <h3 class="h4">Bespoke Service</h3>
+              <p class="small text-muted">Every client is unique. We tailor our entire workflow to your specific narrative.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Gallery start  -->
-    <section id="gallery" class="padding-medium">
-      <div class="container-fluid px-md-5">
-        <h2 class="text-capitalize m-0 py-lg-5">Our Gallery</h2>
-
-        <div class="row" id="gallery-container">
-          <!-- Gallery images will be dynamically loaded here -->
-          <div class="col-12 text-center">
-            <p class="text-muted">Loading gallery...</p>
+    <!-- Services -->
+    <section id="services" class="padding-medium">
+      <div class="container">
+        <div class="row mb-5 text-center" data-aos="fade-up">
+          <div class="col-12">
+            <span class="text-accent ls-2 fw-bold text-uppercase small">What we do</span>
+            <h2 class="display-4 fw-bold mt-2">Our Services</h2>
           </div>
+        </div>
+        <div class="row g-4" id="services-container">
+          <!-- Dynamically Loaded -->
         </div>
       </div>
     </section>
 
-    <!-- Help start  -->
+    <!-- Gallery -->
+    <section id="gallery" class="padding-medium bg-light-dark">
+      <div class="container-fluid px-lg-5">
+        <div class="row mb-5 text-center" data-aos="fade-up">
+          <div class="col-12">
+            <h2 class="display-3 fw-bold">The Portfolio</h2>
+            <p class="text-muted ls-2 text-uppercase small">Moments frozen in time</p>
+          </div>
+        </div>
+        <div class="row g-2" id="gallery-container">
+          <!-- Dynamically Loaded -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Help / About -->
     <section id="help" class="padding-medium">
-      <div class="container-fluid px-md-5">
-        <div class="row d-flex justify-content-between align-items-center">
-          <div class="col-md-6">
-            <div class="image-holder d-flex">
-              <img
-                src="images/group.png"
-                class="img-fluid"
-                alt="Photography Team"
-                loading="lazy"
-                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop'; this.alt='Photography Team';"
-                style="
-                  border-radius: 10px;
-                  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-                "
-              />
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="image-holder-fancy">
+              <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=1000" class="img-fluid" alt="Photography Team">
             </div>
           </div>
-
-          <div class="col-md-6">
-            <div class="text-content ps-md-5 mt-4 mt-md-0">
-              <h2 class="text-capitalize">We help capture your memories</h2>
-              <p>
-                At Photoshot, we specialize in creating beautiful, timeless
-                photographs that capture the essence of your special moments.
-                Our experienced team of photographers brings creativity,
-                professionalism, and attention to detail to every project.
-              </p>
-              <ul class="list-unstyled">
-                <li>✓ Professional wedding photography and videography</li>
-                <li>✓ Corporate events and commercial photography</li>
-                <li>✓ Portrait sessions and family photos</li>
-                <li>✓ Event coverage and documentation</li>
-                <li>✓ Custom photography packages tailored to your needs</li>
-              </ul>
-              <a href="#contact-form" class="btn btn-primary btn-lg mt-4"
-                >Get In Touch</a
-              >
+          <div class="col-lg-6" data-aos="fade-left">
+            <span class="text-accent fw-bold text-uppercase ls-2">The Studio</span>
+            <h2 class="display-4 fw-bold mt-3 mb-4">Crafting Visual Legacies Since 2026</h2>
+            <p class="lead text-muted mb-5">Our studio is a sanctuary for light and creativity. We believe that photography is the only way to pause a moment forever.</p>
+            <div class="row g-4">
+              <div class="col-6">
+                <h4 class="h5 mb-2">500+ Projects</h4>
+                <p class="small text-muted">Delivered with excellence</p>
+              </div>
+              <div class="col-6">
+                <h4 class="h5 mb-2">Elite Gear</h4>
+                <p class="small text-muted">Top-tier cinema equipment</p>
+              </div>
             </div>
+            <a href="#contact-form" class="btn btn-primary mt-5">Inquire Today</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Form start  -->
-    <section id="contact-form" class="padding-medium">
+    <!-- Contact -->
+    <section id="contact-form" class="padding-medium bg-light-dark">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-8">
-            <h2 class="text-center mb-5">Contact Us</h2>
+          <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold">Let's Connect</h2>
+            <p class="text-muted">Tell us about your project and we'll reach out within 24 hours.</p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up">
             <form id="contactForm">
-              <div class="mb-3">
-                <label for="contactName" class="form-label">Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="contactName"
-                  required
-                />
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" id="contactName" placeholder="Name" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" id="contactEmail" placeholder="Email" required />
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" id="contactMessage" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="col-12 text-center mt-4">
+                  <button type="submit" class="btn btn-primary px-5">Send Message</button>
+                </div>
               </div>
-              <div class="mb-3">
-                <label for="contactEmail" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="contactEmail"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="contactMessage" class="form-label">Message</label>
-                <textarea
-                  class="form-control"
-                  id="contactMessage"
-                  rows="5"
-                  required
-                ></textarea>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-lg">
-                  Send Message
-                </button>
-              </div>
-              <div id="contactFormMessage" class="mt-3 text-center"></div>
+              <div id="contactFormMessage" class="mt-4"></div>
             </form>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonial start  -->
-    <section id="testimonial">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <div class="swiper testimonial-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <svg class="text-primary" width="120" height="120">
-                    <use xlink:href="#quote"></use>
-                  </svg>
-                  <p class="testimonial-p mt-2">
-                    Photoshot captured our wedding day perfectly. Every moment
-                    was beautifully documented, and the photos exceeded our
-                    expectations. Highly recommended!
-                  </p>
-                  <div class="row">
-                    <div class="col-md-8">
-                      <p class="fw-semibold pt-3 mb-1">Sarah & John</p>
-                      <p class="text-primary opacity-75">Wedding Clients</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <svg class="text-primary" width="120" height="120">
-                    <use xlink:href="#quote"></use>
-                  </svg>
-                  <p class="testimonial-p mt-2">
-                    Professional, creative, and incredibly talented. The team at
-                    Photoshot made our corporate event look amazing. The quality
-                    of work is outstanding.
-                  </p>
-                  <div class="row">
-                    <div class="col-md-8">
-                      <p class="fw-semibold pt-3 mb-1">Michael Chen</p>
-                      <p class="text-primary opacity-75">Corporate Client</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <svg class="text-primary" width="120" height="120">
-                    <use xlink:href="#quote"></use>
-                  </svg>
-                  <p class="testimonial-p mt-2">
-                    Our family portrait session was wonderful. The photographers
-                    were patient with our kids and captured genuine, beautiful
-                    moments. We'll treasure these photos forever.
-                  </p>
-                  <div class="row">
-                    <div class="col-md-8">
-                      <p class="fw-semibold pt-3 mb-1">Emily Rodriguez</p>
-                      <p class="text-primary opacity-75">
-                        Family Portrait Client
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="testimonial-swiper-button col-md-3 position-absolute">
-                <div class="swiper-button-prev testimonial-arrow"></div>
-                <div class="arrow-divider">|</div>
-                <div class="swiper-button-next testimonial-arrow"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Lets start  -->
-    <section
-      id="start"
-      class="padding-medium"
-      style="
-        background: url(images/background.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 360px;
-        background-size: cover;
-      "
-    >
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-5 order-md-1 d-flex">
-            <h3
-              class="text-capitalize text-white display-4 fw-semibold lh-1 mb-3"
-            >
-              Let's capture your story together.
-            </h3>
-          </div>
-          <div class="col-md-7 order-md-2">
-            <div class="text-content ps-md-5 mt-4 mt-md-0">
-              <p class="text-white py-lg-2">
-                Ready to create stunning visuals for your special occasion?
-                Contact us today to discuss your photography needs and let's
-                bring your vision to life.
-              </p>
-              <a
-                href="#contact-form"
-                class="btn btn-primary btn-lg px-4 me-md-2"
-                >Get Started</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer start  -->
-    <section id="footer" class="bg-dark">
-      <div class="container footer-container">
-        <footer
-          class="row row-cols-1 row-cols-sm-2 row-cols-md-5 padding-medium"
-        >
-          <div class="col-md-4">
-            <h3 class="text-white mb-3">Photoshot</h3>
-            <p class="text-white">
-              Professional photography services capturing your most precious
-              moments with creativity and excellence.
-            </p>
-            <i class="bi-facebook text-white pe-4"></i>
-            <i class="bi-instagram text-white pe-4"></i>
-            <i class="bi-twitter text-white pe-4"></i>
-          </div>
-
-          <div class="col-md-2">
-            <h4 class="text-white">Services</h4>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2">
-                <a href="#services" class="nav-link p-0">Weddings</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#services" class="nav-link p-0">Portraits</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#services" class="nav-link p-0">Events</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#services" class="nav-link p-0">Commercial</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-md-2">
-            <h4 class="text-white">Company</h4>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2">
-                <a href="#about-us" class="nav-link p-0">About Us</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#gallery" class="nav-link p-0">Gallery</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#contact-form" class="nav-link p-0">Contact</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-md-2">
-            <h4 class="text-white">Contact</h4>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2">
-                <a href="#contact-form" class="nav-link p-0">Get Quote</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#contact-form" class="nav-link p-0">Book Session</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#contact-form" class="nav-link p-0">Inquiry</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-md-2">
-            <h4 class="text-white">Help</h4>
-            <ul class="nav flex-column">
-              <li class="nav-item mb-2">
-                <a href="#contact-form" class="nav-link p-0">FAQ</a>
-              </li>
-              <li class="nav-item mb-2">
-                <a href="#contact-form" class="nav-link p-0">Support</a>
-              </li>
-            </ul>
-          </div>
-        </footer>
-      </div>
-
-      <div class="container">
-        <footer
-          class="d-flex flex-wrap justify-content-between align-items-center py-2 mt-3"
-        >
-          <div class="col-md-8 d-flex align-items-center">
-            <p class="text-white">© 2024 Photoshot. All rights reserved.</p>
-          </div>
-        </footer>
-      </div>
-    </section>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/config.js"></script>
     <script src="js/supabase.js"></script>
     <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
